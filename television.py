@@ -1,7 +1,7 @@
 class Television:
     MIN_VOLUME = 0
 
-    def __init__(self) :
+    def __init__(self) -> None:
         self.__muted = False
         self.__volume = Television.MIN_VOLUME
 
@@ -15,7 +15,9 @@ class Television:
         pass
 
     def channel_down(self):
-
+        """
+        Method to decrease the tv channel.
+        """
         if self.__status:
             if self.__channel > Television.MIN_CHANNEL:
                 self.__channel -= 1
@@ -31,8 +33,11 @@ class Television:
     def volume_down(self):
         pass
 
-    def __str__(self):
-
+    def __str__(self) -> str:
+        """
+        Method to show the tv status.
+        :return: tv status.
+        """
         if self.__muted:
             return f'Volume = {Television.MIN_VOLUME}'
         else:
